@@ -1,6 +1,7 @@
 ---
 title: 纯javascript--简单的colorPicker取色器
-date: 2018-04-26 00:04:45
+date: 2018-04-26
+updated: 2018-04-26
 tags:
   - js原生
   - demo

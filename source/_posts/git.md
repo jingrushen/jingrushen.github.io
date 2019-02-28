@@ -1,8 +1,12 @@
 ---
 title: 学习Git的记录过程(不断更新)
-date: 2018-05-02 20:45:05
+date: 2018-05-02
+updated: 2018-05-02
 tags:
-    web前端
+    - web前端
+    - git
+categories:
+    Git
 ---
 ##### 创建
 git init   （创建.git文件夹：将这个目录dev变成git可以管理的仓库）

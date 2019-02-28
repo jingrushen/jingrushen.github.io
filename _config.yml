@@ -81,3 +81,5 @@ deploy:
   type: git
   repo: https://github.com/jingrushen/jingrushen.github.io.git
   branch: master
+
+display_updated: false
