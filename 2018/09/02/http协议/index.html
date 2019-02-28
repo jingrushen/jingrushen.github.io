@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/strawbeery_favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/if_Strawberry_16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。 特点：   无状态，有会话协议，服务器与浏览器之间的请求响应不会保留任何数据，是一种无连接无状态的协议 简单的 可扩展的 连接： 连接由传输层来控制，TCP连接是一种可靠传输，不会丢失信息（即使丢失了也会返回错误）UDP连接是不可靠传输  HTTP流step1">
+<meta name="keywords" content="web前端,http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP协议">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/http协议/index.html">
+<meta property="og:site_name" content="Abby酱">
+<meta property="og:description" content="HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。 特点：   无状态，有会话协议，服务器与浏览器之间的请求响应不会保留任何数据，是一种无连接无状态的协议 简单的 可扩展的 连接： 连接由传输层来控制，TCP连接是一种可靠传输，不会丢失信息（即使丢失了也会返回错误）UDP连接是不可靠传输  HTTP流step1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-01T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP协议">
+<meta name="twitter:description" content="HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。 特点：   无状态，有会话协议，服务器与浏览器之间的请求响应不会保留任何数据，是一种无连接无状态的协议 简单的 可扩展的 连接： 连接由传输层来控制，TCP连接是一种可靠传输，不会丢失信息（即使丢失了也会返回错误）UDP连接是不可靠传输  HTTP流step1">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/http协议/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HTTP协议 | Abby酱</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <a href="https://github.com/jingrushen" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Abby酱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home  //首页"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user  //关于"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags  //标签"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th   //分类"></i> <br />分类</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/http协议/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Abby酱🙃">
+      <meta itemprop="description" content="Step by step">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Abby酱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTTP协议
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-02 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-02T00:00:00+08:00">2018-09-02</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。"><a href="#HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。" class="headerlink" title="HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。"></a>HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。</h3><ul>
+<li>特点：</li>
+</ul>
+<ol>
+<li>无状态，有会话协议，服务器与浏览器之间的请求响应不会保留任何数据，是一种无连接无状态的协议</li>
+<li>简单的</li>
+<li>可扩展的</li>
+<li>连接： 连接由传输层来控制，TCP连接是一种可靠传输，不会丢失信息（即使丢失了也会返回错误）UDP连接是不可靠传输</li>
+</ol>
+<h3 id="HTTP流"><a href="#HTTP流" class="headerlink" title="HTTP流"></a>HTTP流</h3><p>step1. 打开一个TCP连接，TCP连接后被用来发送一条或多条请求，以及接受回应的消息；<br>step2. 客户端发送一个HTTP请求封装在数据帧中<br>step3. 服务端接收并处理HTTP请求，返回响应<br>step4. 关闭连接或者为后续请求重用连接</p>
+<ul>
+<li>请求报文<br>请求行 ： 请求方法 请求url 协议版本 eg.<br>请求头部 ： headers<br>空行<br>请求数据<a id="more"></a></li>
+<li>回应报文<br>响应行： 协议版本 状态码 状态文本<br>响应头部<br>空行<br>响应数据</li>
+</ul>
+<p>短连接(Connection: close)：每一个http请求都会独立的连接完成，每个http请求都会有一个tcp连接<br>长连接(Connection: keep-alive)：一个tcp连接会保持一段时间，重复用于发送一系列请求，节省每一个http请求都要生成一个tcp连接<br>流水线连接：请求不需要等待上一个请求接收到应答之后就可发出</p>
+<h3 id="HTTP的组件系统"><a href="#HTTP的组件系统" class="headerlink" title="HTTP的组件系统"></a>HTTP的组件系统</h3><p>客户端<br>服务器<br>代理 ： 作用：缓存（可以是公开的也可以是私有的，像浏览器的缓存） / 过滤（像反病毒扫描，家长控制…） / 负载均衡（让多个服务器服务不同的请求） /  认证（对不同资源进行权限管理） /  日志记录（允许存储历史信息）<br>（代理缓存拓展：<br>概念： 重用已获取的资源能有效的提升网站与应用的性能，缓存是一种保存资源副本并在下次请求时直接使用该副本，当浏览器发起请求时发现在缓存中存在着相应资源，则会拦截请求，返回该资源的副本而不必去源服务器重新下载。<br>好处：能缓解服务器的压力，获取资源的时间变短从而提高性能。<br>类型： 私有与共享的缓存。<br>部署：代理缓存 / 网关缓存 / 浏览器缓存 / 负载均衡器 / cdn<br>缓存控制： <code>Cache-control： no-store|no-cache (禁止进行缓存) | public | private | max-age(缓存的保鲜期) | must-revalidate(已经过期的缓存不再使用，缓存校验)</code></p>
+<p>规则：当一个资源被缓存之后，当超过缓存期或者资源进行了更新，那么对副本进行删除或更新，当客户端发起一个请求时，缓存检索到已有一个对应的陈旧资源（缓存副本），则缓存会先将此请求附加一个 <code>If-None-Match</code> 头，然后发给目标服务器，以此来检查该资源副本是否是依然还是算新鲜的，若服务器返回了 <code>304</code>](Not Modified)（该响应不会有带有实体信息），则表示此资源副本是新鲜的，这样一来，可以节省一些带宽。若服务器通过<code>If-None-Match</code>或<code>If-Modified-Since</code>判断后发现已过期，那么会带有该资源的实体内容返回。</p>
+<p>）</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>概念：服务器将发送用户浏览器保存在本地的数据中，在下一次浏览器再向同一个服务器发起请求被携带并发送到服务器上，用于告知服务器两个请求是否来自同一个浏览器。<br>Cookie主要用于以下三个方面：</p>
+<ul>
+<li>会话状态管理（如用户登录状态、购物车、游戏分数或其它需要记录的信息）</li>
+<li>个性化设置（如用户自定义设置、主题等）</li>
+<li>浏览器行为跟踪（如跟踪分析用户行为等）</li>
+</ul>
+<h3 id="跨域方法"><a href="#跨域方法" class="headerlink" title="跨域方法"></a>跨域方法</h3><ul>
+<li>浏览器的同源策略：当一个资源从客户端发起请求的资源所在的服务器跟客户端的协议，域名，和端口不一致时，会拒绝发出请求；限制行为：1. 无法读取非同源网页的Cookie、LocalStorage、IndexedDB；2. 无法接触非同源网页的 DOM；3. 无法向非同源地址发送 AJAX 请求（可以发送，但浏览器会拒绝接受响应）。</li>
+</ul>
+<h5 id="一、CORS"><a href="#一、CORS" class="headerlink" title="一、CORS"></a>一、CORS</h5><ul>
+<li>允许使用跨域的情况：</li>
+</ul>
+<ol>
+<li>XMLHttpRequest() 或 fetch 发起的跨域请求</li>
+<li>@font-face 跨域请求字体资源</li>
+<li>webGL贴图 / canva drawImage</li>
+</ol>
+<p>简单请求：</p>
+<ol>
+<li>Method： GET HEAD POST</li>
+<li>不得人为设置该集合之外的其他首部字段：<code>Accept / Accept-Language / Content-Language / Content-Type / DPR / Downlink / Save-Data / Viewport-Width / Width</code></li>
+<li><code>Content-type : text/plain | mulitipart/form-data | application/x-www-form-urlencoded</code><br>非简单请求（需要先预检请求）<br>先发送预检请求(Method：OPTIONS)给服务器，确认后再发送http请求给服务器</li>
+</ol>
+<p>请求头：<br><code>Origin</code>：发送请求的域名<br><code>Access-Control-Request-Method</code>：请求方法<br><code>Access-Control-Request-Headers</code>：请求头部字段<br>响应头：<br><code>Access-Control-Request-Method</code>：存在请求头中的方法<br><code>Access-Control-Request-Headers</code>：存在请求头中的头部字段<br><code>Access-Control-Allow-Origin</code>：包含请求域 | *<br><code>Access-Control-Max-Age</code>：表明该响应的有效时间，在有效时间内，浏览器无须为同一请求再次发起预检请求。<br><code>Access-Control-Allow-Credentials</code>：<br>….<br>满足才能实现跨域</p>
+<h5 id="二、JSONP"><a href="#二、JSONP" class="headerlink" title="二、JSONP"></a>二、JSONP</h5><p>原理：动态插入script元素，向服务器发出请求，请求查询字符串中有一个毁掉参数，用来指定回调函数的名字，服务器收到请求之后就会调用指定的回调函数，并把返回的数据放在回调函数的参数中<br>缺点：只能GET方法</p>
+<hr>
+
+<h3 id="各种协议"><a href="#各种协议" class="headerlink" title="各种协议"></a>各种协议</h3><ul>
+<li>IP协议</li>
+<li>ARP协议 ： ARP查询包中的源IP地址是源主机的IP地址，目标IP地址是目标主机的IP地址，源MAC地址是源主机的MAC地址，ARP査询包中的目的MAC地址是广播MAC地址FF-FF-FF-FF-FF-FF。</li>
+<li>TCP协议：可靠传输协议，接收方会对接收到的数据分段发送确认给发送方，而发送方会将没有确认的数据分段重新传送给接收方，接收方会对数据分段按照正确的顺序重组，并且删除重复的数据分段；TCP的三次握手：</li>
+</ul>
+<p>readyState状态： 请求当前所处的状态<br>0：unsend 代理已经创建，但是未调用open()<br>1：opened open()方法被调用<br>2：headers_received send()方法已经被调用，头部状态是可获得<br>3：loading 下载中，responseText已经包含部分数据<br>4：done 下载操作已经完成 服务器响应成功或者失败</p>
+<p>status 请求结束的状态码<br>101, 转换协议<br>200, OK，访问正常<br>204, No Content，服务器成功处理了请求但是不需要返回实体内容<br>205, Reset Content，服务器成功处理了请求但是会重置文档<br>206,<br>301, Moved Permanently，永久移动<br>302, Move temporarily，暂时移动<br>304, Not Modified，未修改<br>307, Temporary Redirect，暂时重定向<br>401, Unauthorized，未授权，当前的请求需要用户身份验证<br>403, Forbidden，禁止访问<br>404, Not Found，在服务器中找不到请求的资源<br>500, Internal Server Error，服务器发生错误<br>502,<br>503, Service Unavailable，服务器没有准备好处理请求，服务器处于维护或者停机的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(&apos;GET&apos;, &apos;./data.txt&apos;);</span><br><span class="line">xhr.onreadystatechange = function () &#123;</span><br><span class="line">    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;</span><br><span class="line">        console.log(xhr.responseText);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        console.log(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web前端/" rel="tag"># web前端</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/14/js隐式转换/" rel="next" title="js的隐式装箱(小黑屋)">
+                <i class="fa fa-chevron-left"></i> js的隐式装箱(小黑屋)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/26/css3/" rel="prev" title="css3新特性---animation">
+                css3新特性---animation <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.jpg"
+                alt="Abby酱🙃" />
+            
+              <p class="site-author-name" itemprop="name">Abby酱🙃</p>
+              <p class="site-description motion-element" itemprop="description">Step by step</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。"><span class="nav-number">1.</span> <span class="nav-text">HTTP：超文本传输协议，属于应用层协议，用于浏览器与服务器之间的通信，客户端打开tcp连接，发送请求给服务器，服务器接收请求并作出响应。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP流"><span class="nav-number">2.</span> <span class="nav-text">HTTP流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP的组件系统"><span class="nav-number">3.</span> <span class="nav-text">HTTP的组件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">4.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域方法"><span class="nav-number">5.</span> <span class="nav-text">跨域方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、CORS"><span class="nav-number">5.0.1.</span> <span class="nav-text">一、CORS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、JSONP"><span class="nav-number">5.0.2.</span> <span class="nav-text">二、JSONP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种协议"><span class="nav-number">6.</span> <span class="nav-text">各种协议</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Abby酱🙃</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
