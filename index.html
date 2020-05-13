@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/13/vuex————分享ppt内容/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/webpack的打包加载优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Abby酱🙃">
@@ -317,8 +317,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/07/13/vuex————分享ppt内容/" itemprop="url">
-                  vuex————在项目中的使用
+                <a class="post-title-link" href="/2019/11/19/webpack的打包加载优化/" itemprop="url">
+                  webpack的打包加载优化
                 </a>
               
             
@@ -344,24 +344,180 @@
                 
               
 
-              <time title="创建时间：2020-07-13 10:21:05" itemprop="dateCreated datePublished" datetime="2020-07-13T10:21:05+08:00">2020-07-13</time>
+              <time title="创建时间：2019-11-19 11:32:01 / 修改时间：00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-19T11:32:01+08:00">2019-11-19</time>
             
 
             
               
 
               
-                
-                <span class="post-meta-divider">|</span>
-                
+            
+          </span>
 
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a></span>
+
                 
-                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-05-13 10:49:02" itemprop="dateModified" datetime="2020-05-13T10:49:02+08:00">2020-05-13</time>
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>提取公共代码，项目中会引用很多重复的代码，每个页面都把这些公共代码加载进去会导致一些问题，比如说</p>
+<ul>
+<li>重复加载资源，导致资源浪费</li>
+<li>每个页面打开时间长（用户体验差）</li>
+</ul>
+<p>解决的方向：提取公共代码，一次加载完成所有的公共代码，打开第二个页面的时候，无须再次加载而浪费资源。</p>
+<h3 id="splitChunks"><a href="#splitChunks" class="headerlink" title="splitChunks"></a>splitChunks</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/19/webpack的打包加载优化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/13/vuex————分享ppt内容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Abby酱🙃">
+      <meta itemprop="description" content="Step by step">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Abby酱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/13/vuex————分享ppt内容/" itemprop="url">
+                  vuex——在项目中的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-13 10:21:05 / 修改时间：00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-13T10:21:05+08:00">2019-07-13</time>
+            
+
+            
+              
+
               
             
           </span>
@@ -422,7 +578,176 @@
 <h4 id="上述问题提到的处理方法一般有："><a href="#上述问题提到的处理方法一般有：" class="headerlink" title="上述问题提到的处理方法一般有："></a>上述问题提到的处理方法一般有：</h4>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/07/13/vuex————分享ppt内容/#more" rel="contents">
+            <a class="btn" href="/2019/07/13/vuex————分享ppt内容/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/02/vue中使用element-ui自定义主题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Abby酱🙃">
+      <meta itemprop="description" content="Step by step">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Abby酱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/02/vue中使用element-ui自定义主题/" itemprop="url">
+                  vue中使用element-ui自定义主题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-02 13:32:01 / 修改时间：00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-02T13:32:01+08:00">2019-03-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="使用命令行主题工具"><a href="#使用命令行主题工具" class="headerlink" title="使用命令行主题工具"></a>使用命令行主题工具</h4><ul>
+<li><p>安装工具<br><code>npm i element-theme -g</code></p>
+</li>
+<li><p>安装chalk主题，可以从 npm 安装或者从 GitHub 拉取最新代码<br><code></code></p>
+<h1 id="从-npm"><a href="#从-npm" class="headerlink" title="从 npm"></a>从 npm</h1><p>npm i element-theme-chalk -D</p>
+</li>
+</ul>
+<h1 id="从-GitHub"><a href="#从-GitHub" class="headerlink" title="从 GitHub"></a>从 GitHub</h1><p>npm i <a href="https://github.com/ElementUI/theme-chalk" target="_blank" rel="noopener">https://github.com/ElementUI/theme-chalk</a> -D<br><code></code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/02/vue中使用element-ui自定义主题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1641,351 +1966,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/26/webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Abby酱🙃">
-      <meta itemprop="description" content="Step by step">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Abby酱">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/26/webpack/" itemprop="url">
-                  记录学习webpack过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-26 00:00:00" itemprop="dateCreated datePublished" datetime="2018-07-26T00:00:00+08:00">2018-07-26</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="step1"><a href="#step1" class="headerlink" title="step1:"></a>step1:</h4><p>进入项目根目录<br>npm init 创建 package.json<br>npm install –save-dev webpack </p>
-<h4 id="step2"><a href="#step2" class="headerlink" title="step2:"></a>step2:</h4><p>创建app文件夹：用来存放依赖模块js和主模块js<br>在app中创建Greeter.js  main.js<br>创建public文件夹：用来存放webpack打包之后用于浏览器引用的文件夹<br>在public中创建index.html, 并且引入bundle.js  （bundle.js也就是最终打包后的一个集合js的文件）</p>
-<h4 id="step3"><a href="#step3" class="headerlink" title="step3:"></a>step3:</h4>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/26/webpack/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/jsdemo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Abby酱🙃">
-      <meta itemprop="description" content="Step by step">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Abby酱">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/27/jsdemo/" itemprop="url">
-                  原生javascript实现的小demo(不断更新)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-27T00:00:00+08:00">2018-05-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-27 00:00:00" itemprop="dateModified" datetime="2018-08-27T00:00:00+08:00">2018-08-27</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="原生javascript实现的小demo"><a href="#原生javascript实现的小demo" class="headerlink" title="原生javascript实现的小demo"></a>原生javascript实现的小demo</h3><ul>
-<li><a href="https://jingrushen.github.io/javascript/模糊查询/index.html" target="_blank" rel="noopener">增删查dom，实现模糊查询</a></li>
-<li><a href="https://jingrushen.github.io/javascript/可视化排序/index.html" target="_blank" rel="noopener">可视化dom节点排序</a></li>
-<li><a href="https://jingrushen.github.io/javascript/可视化遍历dom树/index.html" target="_blank" rel="noopener">可视化遍历dom tree</a></li>
-<li><a href="https://jingrushen.github.io/javascript/表单验证/index.html" target="_blank" rel="noopener">form表单输入检索</a></li>
-<li><a href="https://jingrushen.github.io/javascript/select判断/index.html" target="_blank" rel="noopener">form表单条件检索</a></li>
-<li><a href="https://jingrushen.github.io/javascript/条件排序/index.html" target="_blank" rel="noopener">实现成绩排序</a></li>
-<li><a href="https://jingrushen.github.io/javascript/浮出层/index.html" target="_blank" rel="noopener">弹出层实现</a></li>
-<li><a href="https://jingrushen.github.io/javascript/贪吃蛇/index.html" target="_blank" rel="noopener">做条贪吃蛇</a></li>
-<li><a href="https://jingrushen.github.io/javascript/ballrun/index.html" target="_blank" rel="noopener">滚动的小球</a></li>
-<li><a href="https://jingrushen.github.io/javascript/css3画一只小猫/index.html" target="_blank" rel="noopener">css3画一只小猫</a></li>
-<li><a href="https://jingrushen.github.io/javascript/发射炮弹游戏/index.html" target="_blank" rel="noopener">发射炮弹游戏</a></li>
-<li><a href="https://jingrushen.github.io/javascript/dragAdrop/index.html" target="_blank" rel="noopener">拖放方块</a></li>
-<li><a href="https://jingrushen.github.io/javascript/导航界面/index.html" target="_blank" rel="noopener">导航界面</a></li>
-<li><a href="https://jingrushen.github.io/javascript/商店导航/index.html" target="_blank" rel="noopener">商店导航</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2037,7 +2017,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
